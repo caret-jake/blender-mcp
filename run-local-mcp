@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Local development wrapper for Blender MCP server
+# This runs the local version using uv instead of the published version
+
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Run using uv from the project directory
+cd "$SCRIPT_DIR" && exec ~/.cargo/bin/uv run main.py "$@"
